@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_recipes")
-def get_recipe():
+def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
@@ -122,7 +122,7 @@ def add_recipe():
     return render_template("add_recipe.html", recipes=recipes)
 
 
-@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
+@app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
@@ -139,7 +139,7 @@ def edit_recipe(recipe_id):
 
 
 @app.route("/delete_recipe/<recipe_id>")
-def delete_task(recipe_id):
+def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
