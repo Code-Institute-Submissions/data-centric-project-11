@@ -25,6 +25,11 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+@app.route("/home")
+def front_page():
+    return render_template("index.html")
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -123,7 +128,7 @@ def add_recipe():
 
 
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
-def edit_recipe(recipe_id):
+def edit_recipes(recipe_id):
     if request.method == "POST":
         submit = {
             "recipe_name": request.form.get("recipe_name"),
