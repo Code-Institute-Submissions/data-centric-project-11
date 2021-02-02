@@ -9,7 +9,7 @@
             <!--Recipe Name-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="100"
                         type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
@@ -17,30 +17,30 @@
             <!--Recipe Description-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <input id="recipe_description" name="recipe_description" minlength="5"
+                        type="text" class="validate" required>
                     <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
             <!--Recipe Ingredients List-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ingredients" name="ingredients" type="text" class="materialize-textarea validate" required>
+                    <input id="ingredients" name="recipe_ingredients" type="text" class="validate" required>
                     <label for="recipe_ingredients">Ingredients</label>
                 </div>
             </div>
             <!--Recipe Ingredients Quantity-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ingredients-quantity" name="ingredients_quantity" type="text" class="materialize-textarea validate" required>
+                    <input id="ingredients_quantity" name="ingredients_quantity" type="text" class="validate" required>
                     <label for="ingredients_quantity">Quantities</label>
                 </div>
             </div>
             <!--Instructions-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea name="ingredients_instructions" id="ingredients_instructions" cols="30" rows="30"></textarea>
-                    <label for="ingredients_instructions">Cooking Instructions</label>
+                    <textarea name="instructions" id="instructions" cols="30" rows="30" class="validate"></textarea>
+                    <label for="instructions">Cooking Instructions</label>
                 </div>
             </div>
             <!--Submit Button-->

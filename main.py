@@ -118,11 +118,14 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "ingredients_quantity": request.form.get("ingredients_quantity"),
+            "instructions": request.form.get("instructions"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
+
     recipes = mongo.db.recipes.find().sort("recipe_name", 1)
     return render_template("add_recipe.html", recipes=recipes)
 
@@ -134,6 +137,8 @@ def edit_recipes(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "ingredients_quantity": request.form.get("ingredients_quantity"),
+            "instructions": request.form.get("instructions"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
