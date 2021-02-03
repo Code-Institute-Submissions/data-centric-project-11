@@ -20,4 +20,8 @@ body {
     .brand-logo {
         margin-top: 3%;
     }
+    .fas-fa-search {
+        display: block;
+        float: left;
+    }
 }
