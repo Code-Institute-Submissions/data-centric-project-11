@@ -1,21 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="index-banner" class="parallax-container">
+  <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center green-text lighten-1">The Community Kitchen</h1>
+        <h1 class="header center white-text">The Community Kitchen</h1>
         <div class="row center">
-          <h5 class="header col s12 green-text lighten-1">A virtual home for recipes by people like you.</h5>
+          <h5 class="header col s12 white-text">A virtual home for recipes by people like you.</h5>
         </div>
         <div class="row center">
-          <a href="{{ url_for('register') }}" id="get-started" class="btn-large waves-effect waves-light green lighten-1">Get Started</a>
-        </div>
+                <a href="{{ url_for('register') }}" id="get-started"
+                    class="btn-large waves-effect waves-light green lighten-1">Get Started</a>
+            </div>
         <br><br>
+
       </div>
     </div>
-    <div class="parallax"><img src="https://ocpl.org/sites/ocpl/files/styles/hero_tall_1x/public/2020-07/shutterstock_1078848653.jpg?h=7eb92231&itok=KISfpab3"
+    <div class="parallax"><img src="https://ocpl.org/sites/ocpl/files/styles/hero_tall_1x/public/2020-07/shutterstock_1078848653.jpg?h=7eb92231&itok=KISfpab3" 
         alt="Unsplashed background img 1"></div>
   </div>
 
@@ -23,44 +25,43 @@
 <div class="container">
     <div class="section">
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="fas fa-book-open"></i></h2>
-            <h3 class="center green-text lighten-1">Recipes</h3>
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="fas fa-book-open"></i></h2>
+                    <h3 class="center green-text lighten-1">Recipes</h3>
 
-            <p class="light">We did most of the heavy lifting for you to provide a massive list
-                of recipes. These recipes were brought to you by the community of chefs that you
-                not only find in restaurants, but in the average home as well.
-            </p>
-          </div>
+                    <p class="light center">We did most of the heavy lifting for you to provide a massive list
+                        of recipes. These recipes were brought to you by the community of chefs that you
+                        not only find in restaurants, but in the average home as well.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col s12">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="fas fa-globe-americas"></i></h2>
+                    <h3 class="center green-text lighten-1">Community</h3>
+
+                    <p class="light center">The secrets to great cooking can be found within your community. Here
+                        is a place for the average chef to contribute their special recipes and share with
+                        the world.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col s12">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="fas fa-utensils"></i></h2>
+                    <h3 class="center green-text lighten-1">Learning</h3>
+
+                    <p class="light center">The Community Kitchen is a fun way to get started with cooking. Everything
+                        from beginner to restaurant-chef recipes, it's a great way to catch that cooking bug.
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="fas fa-globe-americas"></i></h2>
-            <h3 class="center green-text lighten-1">Community</h3>
-
-            <p class="light">The secrets to great cooking can be found within your community. Here
-                is a place for the average chef to contribute their special recipes and share with
-                the world.
-            </p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="fas fa-utensils"></i></h2>
-            <h3 class="center green-text lighten-1">Fun</h3>
-
-            <p class="light">The Community Kitchen is a fun way to get started with cooking. Everything
-                from beginner to restaurant-chef recipes, it's a great way to catch that cooking bug.
-            </p>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div> 
+</div>
 {% endblock %}
