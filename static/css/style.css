@@ -11,7 +11,7 @@ body {
     flex: 1 0 auto;
   }
 
-/* .parallax-container {
+.parallax-container {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://ocpl.org/sites/ocpl/files/styles/hero_tall_1x/public/2020-07/shutterstock_1078848653.jpg?h=7eb92231&itok=KISfpab3);
     min-height: 380px;
     line-height: 0;
@@ -19,7 +19,7 @@ body {
 }
   .parallax-container .section {
     width: 100%;
-  } */
+  }
 
 @media only screen and (max-width: 600px) {
     .brand-logo {

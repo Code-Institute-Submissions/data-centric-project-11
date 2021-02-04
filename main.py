@@ -108,7 +108,7 @@ def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("front_page"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -130,8 +130,8 @@ def add_recipe():
     return render_template("add_recipe.html", recipes=recipes)
 
 
-@app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
-def edit_recipes(recipe_id):
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
             "recipe_name": request.form.get("recipe_name"),
@@ -144,8 +144,8 @@ def edit_recipes(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
 
-    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipes.html", recipes=recipes)
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit_recipes.html", recipe=recipe)
 
 
 @app.route("/delete_recipe/<recipe_id>")

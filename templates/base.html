@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Recipe Manager</title>
+    <title>TheCommunityKitchen</title>
 </head>
 <body>
 
@@ -23,7 +23,6 @@
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('front_page') }}">Home</a></li>
                 <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                 {% if session.user %}
                 <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
@@ -46,7 +45,6 @@
                 <i class="fas fa-utensils"></i>
                 </h4>
         </li>
-        <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
         {% if session.user %}
         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -91,27 +89,26 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Looking for a recipe?
-                    <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-small">Recipes</a>
+                <h5 class="white-text">Looking to add your own recipes?
+                    <a href="{{ url_for('register') }}" class="waves-effect waves-light btn-small">Sign Up!</a>
                 </h5>
                     
                 <p class="grey-text text-lighten-4"><strong>The Community Kitchen</strong> is home to the largest online
                     cookbook, powered by millions around the world. If you'd like to contribute your own recipes, 
-                    <a href="{{ url_for('register') }}"><strong>Sign Up Here!</strong></a>
+                    you can sign up above and be apart of a community of chefs.
                 </p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a href="{{ url_for('front_page') }}" class="waves-effect waves-light btn-small">Home</a></li>
-                    <li><a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-small">Recipes</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-small">Recipes</a></li><br>
                     {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn-small">Profile</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn-small">Profile</a></li><br>
                     {% if session.user|lower == "admin"|lower %}
                     {% endif %}
-                    <li><a href="{{ url_for('logout') }}" class="waves-effect waves-light btn-small">Log Out</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="waves-effect waves-light btn-small">Log Out</a></li><br>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}" class="waves-effect waves-light btn-small">Log In</a></li>
+                    <li><a href="{{ url_for('login') }}" class="waves-effect waves-light btn-small">Log In</a></li><br>
                     <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn-small">Sign Up</a></li>
                     {% endif %}
                 </ul>
