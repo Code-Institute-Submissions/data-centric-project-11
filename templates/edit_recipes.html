@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="100"
-                        type="text" class="validate" required>
+                      value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -17,28 +17,31 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input id="recipe_description" name="recipe_description" minlength="5"
-                        type="text" class="validate" required>
+                       value="{{ recipe.recipe_description }}" type="text" class="validate" required>
                     <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
             <!--Recipe Ingredients List-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ingredients" name="recipe_ingredients" type="text" class="validate" required>
+                    <input id="recipe_ingredients" name="recipe_ingredients"
+                    value="{{ recipe.recipe_ingredients }}" type="text" class="validate" required>
                     <label for="recipe_ingredients">Ingredients</label>
                 </div>
             </div>
-            <!--Recipe Ingredients Quantity-->
+            <!--Recipe measurements-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ingredients_quantity" name="ingredients_quantity" type="text" class="validate" required>
-                    <label for="ingredients_quantity">Quantities</label>
+                    <input id="measurements" name="measurements"
+                    value="{{ recipe.measurements }}" type="text" class="validate" required>
+                    <label for="measurements">Measurements</label>
                 </div>
             </div>
             <!--Instructions-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea name="instructions" id="instructions" cols="30" rows="30" class="validate"></textarea>
+                    <textarea name="instructions" id="instructions" 
+                    value="{{ recipe.instructions }}" cols="30" rows="30" class="validate"></textarea>
                     <label for="instructions">Cooking Instructions</label>
                 </div>
             </div>
@@ -48,9 +51,12 @@
                     <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">Cancel
                         <i class="fas fa-times-circle right"></i>
                     </a>
-                    <button type="submit" class="btn-large green lighten-1 text-shadow">
+                    <a href="{{ url_for('get_recipes') }}">
+                        <button type="submit" class="btn-large green lighten-1 text-shadow">
                         Edit Recipe <i class="fas fa-plus-square right"></i>
                     </button>
+                    </a>
+                    
                 </div>
             </div>
         </form>

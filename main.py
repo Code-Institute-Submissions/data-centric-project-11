@@ -8,7 +8,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -49,6 +48,8 @@ def register():
             return redirect(url_for("register"))
 
         register = {
+            "firstname": request.form.get("firstname").lower(),
+            "lastname": request.form.get("lastname").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -99,7 +100,6 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-
     return redirect(url_for("login"))
 
 
@@ -118,7 +118,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "ingredients_quantity": request.form.get("ingredients_quantity"),
+            "measurements": request.form.get("measurements"),
             "instructions": request.form.get("instructions"),
             "created_by": session["user"]
         }
@@ -137,7 +137,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "ingredients_quantity": request.form.get("ingredients_quantity"),
+            "measurements": request.form.get("measurements"),
             "instructions": request.form.get("instructions"),
             "created_by": session["user"]
         }
