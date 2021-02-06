@@ -1,3 +1,5 @@
+### HEROKU DEPLOYMENT
+https://data-centric-proj-josemorales.herokuapp.com/
 # THE COMMUNITY KITCHEN
 ### Data Centric Project 3
 The Community Kitchen is intended to provide __*FREE*__ recipes by anyone who signs up with the website. It is a place to share all types of recipes with people around the world. People can create a profile, as well as create, read, update, and delete their recipes whenever they'd like.
